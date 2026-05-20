@@ -42,4 +42,14 @@ export class ApiService {
   buyProduct(orderData: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/buy`, orderData, { headers: this.getHeaders() });
   }
+
+  updateProduct(id: number, product: any): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.put(`${this.baseUrl}/products/${id}`, product, { headers });
+  }
+
+  deleteProduct(id: number): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.delete(`${this.baseUrl}/products/${id}`, { headers });
+  }
 }

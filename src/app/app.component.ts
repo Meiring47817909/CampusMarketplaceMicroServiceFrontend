@@ -12,10 +12,10 @@ import { CommonModule } from '@angular/common';
       <nav>
         <h1>Campus Marketplace</h1>
         <div class="nav-links">
+          <a routerLink="/store">Storefront</a>
           <a *ngIf="!authService.isLoggedIn()" routerLink="/login">Login</a>
           <a *ngIf="!authService.isLoggedIn()" routerLink="/register">Register</a>
           <a *ngIf="authService.isAdmin()" routerLink="/admin">Admin Dashboard</a>
-          <a *ngIf="authService.isStudent()" routerLink="/store">Storefront</a>
           <button *ngIf="authService.isLoggedIn()" (click)="logout()">Logout ({{authService.getUsername()}})</button>
         </div>
       </nav>
